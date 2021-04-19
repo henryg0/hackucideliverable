@@ -1,20 +1,26 @@
-.base {
-  width: 100%;
-  height: 100%;
-  background-color: #ff7b5c;
-}
-
-body {
-  background-color: #ff7b5c;
-}
-
 .petr {
-  height:20%;
+  height:30%;
+  margin: auto
 }
 
-.formRow {
-  background-color: white;
-  border-radius: 2rem;
-  height:20rem;
-  text-align: center;
+.flex-container {
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:  space-around;
+  padding: 20px;
+  height:40rem;
+  width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  .flex-container {
+    display:flex;
+    flex-flow: column;
+    justify-content:  center;
+    align-items:center;
+    padding: 20px;
+    margin: 50px;
+    height:40rem;
+    width: 100%;
+  }
 }

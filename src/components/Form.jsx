@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import FormInput from "./FormInput";
 import { Button, TextField } from "@material-ui/core";
 import axios from "axios";
 import validator from "validator";
@@ -31,14 +30,14 @@ function Form() {
     }
 
     if (!nameError && !emailError && !funFactError) {
-      axios.get("https://hack-tech-app-endpoint.herokuapp.com/").then((res) => {
+      axios.get("https://hack-tech-app-endpoint.herokuapp.com/test").then((res) => {
         console.log(res.data);
         alert(res.data);
       });
-      setName('');
-      setEmail('');
-      setFunFact('');
-      alert('Submission Received! :)')
+      setName("");
+      setEmail("");
+      setFunFact("");
+      alert("Submission Received! :)");
     }
   }
 
@@ -63,47 +62,45 @@ function Form() {
   const [funFactFlag, setFunFactError] = useState(false);
 
   return (
-    <div>
-      <form class="flex-form" onSubmit={handleSubmit}>
-        <h3>Hack UCI Application</h3>
-        <TextField
-          style={{ width: "12rem" }}
-          InputLabelProps={{ shrink: true }}
-          label={"Name"}
-          onChange={handleNameChange}
-          value={name}
-          error={nameFlag}
-          helperText={"required!"}
-        ></TextField>
-        <TextField
-          style={{ width: "12rem" }}
-          InputLabelProps={{ shrink: true }}
-          label={"Email"}
-          onChange={handleEmailChange}
-          value={email}
-          error={emailFlag}
-          helperText={"required!"}
-        ></TextField>
-        <TextField
-          style={{ width: "12rem" }}
-          InputLabelProps={{ shrink: true }}
-          label={"FunFact"}
-          onChange={handleFunFactChange}
-          value={funFact}
-          multiline={true}
-          error={funFactFlag}
-          helperText={"required!"}
-        ></TextField>
-        <Button
-          borderRadius="5rem"
-          className="submit-btn"
-          style={{ background: "#ff7b5c" }}
-          onClick={handleSubmit}
-        >
-          Submit
-        </Button>
-      </form>
-    </div>
+    <form class="flex-form" onSubmit={handleSubmit}>
+      <h3>Hack UCI Application</h3>
+      <TextField
+        style={{ width: "100%" }}
+        InputLabelProps={{ shrink: true}}
+        label={"Name"}
+        onChange={handleNameChange}
+        value={name}
+        error={nameFlag}
+        helperText={nameFlag ? "required!" : ''}
+      ></TextField>
+      <TextField
+        style={{ width: "100%"}}
+        InputLabelProps={{ shrink: true }}
+        label={"Email"}
+        onChange={handleEmailChange}
+        value={email}
+        error={emailFlag}
+        helperText={emailFlag ? "required! (example: email@domain.com)" : ''}
+      ></TextField>
+      <TextField
+        style={{ width: "100%" }}
+        InputLabelProps={{ shrink: true }}
+        label={"Fun Fact"}
+        onChange={handleFunFactChange}
+        value={funFact}
+        multiline={true}
+        error={funFactFlag}
+        helperText={funFactFlag ? "required!" : ''}
+      ></TextField>
+      <Button
+        borderRadius="5rem"
+        className="submit-btn"
+        style={{ background: "#ff7b5c" }}
+        onClick={handleSubmit}
+      >
+        Submit
+      </Button>
+    </form>
   );
 }
 export default Form;

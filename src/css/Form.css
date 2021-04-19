@@ -1,17 +1,3 @@
-input {
-  border-radius:7px;
-  border-width:0.05rem;
-  width: 100%;
-  padding-top:0;
-  margin: 0 auto 0.5 auto;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom:0;
-  width:100%;
-}
-
 textarea {
   border-radius:7px;
   border-width:0.05rem;
@@ -20,12 +6,13 @@ textarea {
 }
 
 .submit-btn {
-  width:6rem;
+  width: 30%;
   height:7%;
   background-color: #ff7b5c;
   color:white !important;
   border-radius: 5rem !important;
   margin-top : 0;
+  margin-left: 70% !important;
 }
 
 .flex-form {
@@ -34,10 +21,21 @@ textarea {
   justify-content:  space-around;
   width:35%;
   background-color: white;
-  height:25rem;
+  height:100%;
   border-radius:2rem;
+  padding: 50px;
+  margin: 50px;
+  align-items:center;
 }
 
-h3 {
-  text-align:center;
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-form {
+    flex-direction: column;
+  }
+}
+
+h2 {
+  text-align: center;
+  margin: auto ;
 }
