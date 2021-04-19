@@ -7,3 +7,14 @@
 body {
   background-color: #ff7b5c;
 }
+
+.petr {
+  height:20%;
+}
+
+.formRow {
+  background-color: white;
+  border-radius: 2rem;
+  height:20rem;
+  text-align: center;
+}

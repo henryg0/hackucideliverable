@@ -1,10 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Form from "./components/Form";
+import "./css/Form.css";
+import petr from "./img/petr.png";
 
 function App() {
+  document.body.style = "background: #ff7b5c";
   return (
     <div>
-      <h1>Hello World</h1>
+      <Form />
+      <img className="petr" src={petr} alt="petr" />
     </div>
   );
 }
